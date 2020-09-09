@@ -11,3 +11,18 @@ jobs:
          setx path "%path%;$(Build.SourcesDirectory)\depot_tools\"
          ./depot_tools/gclient.bat
 
+  - task: CmdLine@2
+    displayName: 'Prepare Sources'
+    inputs:
+      script: |
+        python scripts/bootstrap.py
+        ./depot_tools/gclient.bat sync
+    
+  - task: CmdLine@2
+    displayName: 'Generate Ninja'
+    inputs:
+      script: |
+        gn gen out/Release
+
+
+
