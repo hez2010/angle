@@ -8,6 +8,6 @@ jobs:
     inputs:
       script: |
         git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-         setx path "%path%;$(Build.SourcesDirectory)"
+         setx path "%path%;$(Build.SourcesDirectory)\depot_tools\"
          gclient
-         
+
