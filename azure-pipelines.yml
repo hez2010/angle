@@ -10,3 +10,4 @@ jobs:
         git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
          setx path "%path%;$(Build.SourcesDirectory)"
          gclient
+         
