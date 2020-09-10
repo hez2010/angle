@@ -3,6 +3,11 @@ jobs:
   pool:
     vmImage: 'windows-latest'
   steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.7'
+    displayName: 'Use Python 3.7'
+
   - task: CmdLine@2
     displayName: 'Install Depot Tools'
     inputs:
