@@ -13,8 +13,9 @@ jobs:
     inputs:
       script: |
         git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-         setx path "%path%;$(Build.SourcesDirectory)\depot_tools\"
-         ./depot_tools/gclient.bat
+
+  - powershell: Write-Host "##vso[task.prependpath]$(Build.SourcesDirectory)\depot_tools"
+    displayName: Add depot_tools to PATH
 
   - task: CmdLine@2
     displayName: 'Prepare Sources'
