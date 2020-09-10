@@ -31,7 +31,7 @@ jobs:
     displayName: 'Generate Ninja'
     inputs:
       script: |
-        gn gen out/Release
+        gn gen target_cpu="x64" is_debug=false out/Release
 
   - task: CmdLine@2
     displayName: 'Build Angle'
