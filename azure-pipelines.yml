@@ -31,4 +31,11 @@ jobs:
         gn gen out/Release
 
 
+  - task: CmdLine@2
+    displayName: 'Build Angle'
+    inputs:
+      script:  |
+        autoninja -C out/Release
+
+
 
