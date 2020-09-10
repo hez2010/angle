@@ -1,5 +1,5 @@
 variables:
-   DepotToolsWinToolchain: 0
+   Depot.Tools.Win.Toolchain: 0
 
 jobs:
 - job: Windows
@@ -19,6 +19,13 @@ jobs:
 
   - powershell: Write-Host "##vso[task.prependpath]$(Build.SourcesDirectory)\depot_tools"
     displayName: Add depot_tools to PATH
+
+  - task: CmdLine@2
+  displayName: 'Prepare Sources'
+  inputs:
+    script: |
+      python scripts/bootstrap.py
+      ./depot_tools/gclient.bat sync
     
   - task: CmdLine@2
     displayName: 'Generate Ninja'
