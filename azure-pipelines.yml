@@ -21,12 +21,12 @@ jobs:
     displayName: Add depot_tools to PATH
 
   - task: CmdLine@2
-  displayName: 'Prepare Sources'
-  inputs:
-    script: |
-      python scripts/bootstrap.py
-      ./depot_tools/gclient.bat sync
-    
+    displayName: 'Prepare Sources'
+    inputs:
+      script: |
+        python scripts/bootstrap.py
+        ./depot_tools/gclient.bat sync
+      
   - task: CmdLine@2
     displayName: 'Generate Ninja'
     inputs:
