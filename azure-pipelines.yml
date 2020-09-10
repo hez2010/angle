@@ -1,3 +1,6 @@
+variables:
+   DepotToolsWinToolchain: 0
+
 jobs:
 - job: Windows
   pool:
