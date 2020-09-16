@@ -112,6 +112,7 @@ Release_Win32/
 Release_x64/
 TestResults.qpa
 .idea/
+nuget/obj
 
 # Any temporary files will confuse code generation.
 !scripts/code_generation_hashes/*
