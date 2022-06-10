@@ -24,6 +24,7 @@ jobs:
     inputs:
       script:  |
         rmdir /Q /S out
+    continueOnError: true
 
   - task: CmdLine@2
     displayName: 'Generate Ninja (arm64)'
@@ -75,6 +76,7 @@ jobs:
       script:  |
         rmdir /Q /S artifacts
         rmdir /Q /s nuget\bin
+    continueOnError: true
 
   - task: CmdLine@2
     displayName: 'Generate Nuget Package'
